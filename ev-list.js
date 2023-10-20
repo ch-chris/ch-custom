@@ -36,15 +36,16 @@ listItemWrap.addEventListener("mousemove", (e) => {
   listImageWrap.style.transform = `translate(0px,${y / 20}px)`;
 });
 
-let top = el.offsetTop;
-window.onscroll = function () {
-  myScrollFunction();
-};
+//Copied top function 4 later...
+// let top = el.offsetTop;
+// window.onscroll = function () {
+//   myScrollFunction();
+// };
 
-function myScrollFunction() {
-  var res = movEl - document.documentElement.scrollTop;
+// function myScrollFunction() {
+//   var res = movEl - document.documentElement.scrollTop;
 
-  if (res <= 0) {
-    console.log("top");
-  }
-}
+//   if (res <= 0) {
+//     console.log("top");
+//   }
+// }
