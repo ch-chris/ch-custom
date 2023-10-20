@@ -1,4 +1,4 @@
-console.log("ev lists");
+//console.log("ev lists");
 //variables for list items
 const listItems = document.querySelectorAll(".ev_list-item");
 const listImages = document.querySelectorAll(".ev_list-image");
