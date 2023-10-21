@@ -30,22 +30,24 @@ for (let i = 0; i < listItems.length; i++) {
 const listImageWrap = document.querySelector(".ev_list-image-wrapper");
 const listItemWrap = document.querySelector(".ev_list-item-wrapper");
 //listener for mousemove on list wrapper
-listItemWrap.addEventListener("mousemove", (e) => {
-  const x = e.clientX;
-  const y = e.clientY;
-  listImageWrap.style.transform = `translate(0px,${y / 20}px)`;
-});
+// listItemWrap.addEventListener("mousemove", (e) => {
+//   const y = e.clientY;
+//   listImages.forEach(function (image) {
+//     image.style.transform = `translate(0px,${y / 10}px)`;
+//   });
+// });
 
 //Copied top function 4 later...
-// let top = el.offsetTop;
-// window.onscroll = function () {
-//   myScrollFunction();
-// };
-
-// function myScrollFunction() {
-//   var res = movEl - document.documentElement.scrollTop;
-
-//   if (res <= 0) {
-//     console.log("top");
+// const observer = new IntersectionObserver(
+//   (entries) => {
+//     entries.forEach((entry) => {
+//       console.log("???", entry);
+//     });
+//   },
+//   {
+//     threshold: 1,
 //   }
-// }
+// );
+// listItems.forEach((item, i) => {
+//   observer.observe(item, listItems.length);
+// });
