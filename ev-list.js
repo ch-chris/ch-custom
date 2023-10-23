@@ -35,7 +35,7 @@ for (let i = 0; i < listItems.length; i++) {
   // });
   document.addEventListener("scroll", function () {
     let listPos = listItems[i].getBoundingClientRect();
-    if ((listPos.top / pageHeight) * 100 <= 12) {
+    if ((listPos.top / pageHeight) * 100 <= 13) {
       changeFocus(listItems[i], i);
       //console.log(listPos.top, pageHeight, (listPos.top / pageHeight) * 100, i);
     }
