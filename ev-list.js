@@ -17,37 +17,37 @@ function changeFocus(trigger, i) {
   listImages[i].classList.add("is--active");
   listHeadings[i].classList.add("is--active");
 }
-//listener for mouseenter on each item
+//listener for scroll and mouseenter on each item
+let pageHeight = (function () {
+  return Math.max(
+    document.body.scrollHeight,
+    document.documentElement.scrollHeight,
+    document.body.offsetHeight,
+    document.documentElement.offsetHeight,
+    document.body.clientHeight,
+    document.documentElement.clientHeight
+  );
+})();
 for (let i = 0; i < listItems.length; i++) {
-  listItems[i].addEventListener("mouseenter", function () {
-    changeFocus(this, i);
+  // removed mouseenter for scroll function
+  // listItems[i].addEventListener("mouseenter", function () {
+  //   changeFocus(this, i);
+  // });
+  document.addEventListener("scroll", function () {
+    let listPos = listItems[i].getBoundingClientRect();
+    if ((listPos.top / pageHeight) * 100 <= 12) {
+      changeFocus(listItems[i], i);
+      //console.log(listPos.top, pageHeight, (listPos.top / pageHeight) * 100, i);
+    }
   });
-  //   listItems[i].addEventListener("mouseleave", function () {
-  //     changeFocus(this, i);
-  //   });
 }
-//moves image with cursor function
-const listImageWrap = document.querySelector(".ev_list-image-wrapper");
-const listItemWrap = document.querySelector(".ev_list-item-wrapper");
-//listener for mousemove on list wrapper
-listItemWrap.addEventListener("mousemove", (e) => {
-  const y = e.clientY;
-  listImages.forEach(function (image) {
-    image.style.transform = `translate(0px,${y / 25}px)`;
-  });
-});
-
-//Copied top function 4 later...
-// const observer = new IntersectionObserver(
-//   (entries) => {
-//     entries.forEach((entry) => {
-//       console.log("???", entry);
-//     });
-//   },
-//   {
-//     threshold: 1,
-//   }
-// );
-// listItems.forEach((item, i) => {
-//   observer.observe(item, listItems.length);
+//moves image with cursor function *removed*
+// const listImageWrap = document.querySelector(".ev_list-image-wrapper");
+// const listItemWrap = document.querySelector(".ev_list-item-wrapper");
+// //listener for mousemove on list wrapper
+// listItemWrap.addEventListener("mousemove", (e) => {
+//   const y = e.clientY;
+//   listImages.forEach(function (image) {
+//     image.style.transform = `translate(0px,${y / 25}px)`;
+//   });
 // });
